@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h2 {
+      color: #FFFFFF;
+      margin: 10px 0;
+    }
+
+    button {
+      flex: 1;
+      height: 40px;
+      margin: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .buttons-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: #131417;
+      padding: 10px;
+    }
+
+    .board {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      background-color: #131417;
+      padding: 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 600px) {
+      .buttons-section {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+        
+      }
+
+      .board h2 {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 601px) and (max-width: 900px) {
+      .board {
+        padding: 15px;
+      }
+
+      .board h2 {
+        font-size: 18px;
+      }
+
+      button {
+        width: 30%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="board">
+    <h2>Computer Choice: <span id="cChoice"></span></h2>
+    <h2>User Choice: <span id="uChoice"></span></h2>
+    <h2>Result: <span id="result"></span></h2>
+  </section>
+
+  <section class="buttons-section">
+    <button id="Rock🪨">Rock</button>
+    <button id="Paper🗞️">Paper</button>
+    <button id="Scissor✂️">Scissor</button>
+  </section>
+
+  <script>
+    const computerChoiceShow = document.getElementById("cChoice")
+    const userChoiceShow = document.getElementById("uChoice")
+    const resultShow = document.getElementById("result")
+
+    const userChoiceButton = document.querySelectorAll("button")
+
+    let userChoice
+    let computerChoice
+    let userChoiceText
+
+    userChoiceButton.forEach(
+      possibleChoice => possibleChoice.addEventListener('click', (e) => {
+        userChoiceText = e.target.id
+        userChoiceShow.innerHTML = userChoiceText
+        genuChoice()
+        gencChoice()
+        result()
+      })
+    )
+
+    function genuChoice() {
+      if (userChoiceText === 'Rock🪨') {
+        userChoice = 1
+      } else if (userChoiceText === 'Paper🗞️') {
+        userChoice = 2
+      } else {
+        userChoice = 3
+      }
+    }
+
+    function gencChoice() {
+      computerChoice = Math.floor(Math.random() * userChoiceButton.length + 1)
+
+      if (computerChoice === 1) {
+        computerChoiceShow.innerHTML = 'Rock🪨'
+      }
+      if (computerChoice === 2) {
+        computerChoiceShow.innerHTML = 'Paper🗞️'
+      }
+      if (computerChoice === 3) {
+        computerChoiceShow.innerHTML = 'Scissor✂️'
+      }
+    }
+
+    function result() {
+      if (userChoice === computerChoice) {
+        resultShow.innerHTML = "It's a draw 😁"
+      } else if ((userChoice === 1 && computerChoice === 3) ||
+        (userChoice === 2 && computerChoice === 1) ||
+        (userChoice === 3 && computerChoice === 2)) {
+        resultShow.innerHTML = "You Won 😊"
+      } else {
+        resultShow.innerHTML = "You Lost 😛"
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Sabbir's world</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+        }
+        .profile-container {
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 30px;
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-info {
+            flex-grow: 1;
+        }
+        .profile-info h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+        .profile-info .stats {
+            display: flex;
+            margin-top: 10px;
+        }
+        .profile-info .stats div {
+            margin-right: 20px;
+        }
+        .profile-info .stats div span {
+            font-weight: bold;
+        }
+        .profile-info .bio {
+            margin-top: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .profile-info h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="header">
+            <div class="profile-pic">
+                <img src="images/profile.JPEG" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h1>sabbirznote</h1>
+                <div class="stats">
+                    <div><span id="imageCount"></span> posts</div>
+                    <div><span>200k</span> followers</div>
+                    <div><span>180</span> following</div>
+                </div>
+                <div class="bio">
+                    <p>Bio description goes here. It can be a few lines long and include hashtags and links.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <a href="/projects/app1.html"><img src="images/app1.png" alt="Project 1"></a>
+            <a href="project2.html"><img src="project2.jpg" alt="Project 2"></a>
+            <a href="project3.html"><img src="project3.jpg" alt="Project 3"></a>
+            
+        </div>
+    </div>
+    <script>
+        // Get the number of images in the gallery
+        const imageCount = document.querySelectorAll('.gallery img').length;
+        // Display the image count
+        document.getElementById('imageCount').innerText = imageCount;
+    </script>
+</body>
+</html>
