@@ -90,7 +90,7 @@
                 <h1>sabbirznote</h1>
                 <div class="stats">
                     <div><span id="imageCount"></span> posts</div>
-                    <div><span>200k</span> followers</div>
+                    <div><span id="clickCount">200k</span> View </div>
                     <div><span>180</span> following</div>
                 </div>
                 <div class="bio">
@@ -108,6 +108,25 @@
         const imageCount = document.querySelectorAll('.gallery img').length;
         // Display the image count
         document.getElementById('imageCount').innerText = imageCount;
+
+        // Initialize click count
+        let clickCount = 0;
+
+        // Get all project links
+        const projectLinks = document.querySelectorAll('.gallery a');
+
+        // Add click event listener to each project link
+        projectLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Increment click count
+                clickCount++;
+                // Update click count display
+                document.getElementById('clickCount').innerText = clickCount;
+            });
+        });
+
+
+        
     </script>
 </body>
 </html>
