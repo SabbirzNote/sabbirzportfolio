@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #e0f7fa; /* Light cyan background for a fresh look */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styling for the puzzle board */
+#puzzleBoard {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Default layout for larger screens (e.g., desktop) */
+@media (min-width: 1024px) {
+    #puzzleBoard {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+}
+
+/* Layout for tablets (768px and below) */
+@media (max-width: 768px) {
+    #puzzleBoard {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+/* Layout for mobile devices (480px and below) */
+@media (max-width: 480px) {
+    #puzzleBoard {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+    }
+}
+
+/* Styling for each image */
+#puzzleBoard img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    object-fit: cover; /* Ensures images cover the grid cell without distortion */
+}
+
+/* Hover effect for images */
+#puzzleBoard img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
