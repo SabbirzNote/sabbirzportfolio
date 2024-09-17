@@ -4,11 +4,11 @@ html, body{
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0;
     padding: 0;
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
     background-color: #e0f7fa; /* Light cyan background for a fresh look */
     font-family: 'Arial', sans-serif;
@@ -28,6 +28,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+p{font-weight: bold;}
 
 /* Default layout for larger screens (e.g., desktop) */
 @media (min-width: 1024px) {
