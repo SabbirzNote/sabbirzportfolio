@@ -8,7 +8,7 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
     background-color: #e0f7fa; /* Light cyan background for a fresh look */
     font-family: 'Arial', sans-serif;
@@ -20,7 +20,7 @@ body {
     gap: 10px;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
     margin: 20px auto;
     background-color: #ffffff;
