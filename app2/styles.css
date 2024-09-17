@@ -1,3 +1,6 @@
+html, body{
+    overflow: hidden;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -6,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100vw;
     background-color: #e0f7fa; /* Light cyan background for a fresh look */
     font-family: 'Arial', sans-serif;
 }
