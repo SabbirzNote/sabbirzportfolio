@@ -81,22 +81,26 @@ function checkMatch(){
         imgCompare = []
         clickedCardIds = []
     }else{
-        targetImg[clickedCardIds[0]].setAttribute('src', 'app2images/blank.jpg')
-        targetImg[clickedCardIds[1]].setAttribute('src', 'app2images/blank.jpg')
-        imgCompare = []
-        clickedCardIds = []
+        
+            targetImg[clickedCardIds[0]].setAttribute('src', 'app2images/blank.jpg')
+            targetImg[clickedCardIds[0]].addEventListener('click', cardClick)
+            targetImg[clickedCardIds[1]].setAttribute('src', 'app2images/blank.jpg')
+            targetImg[clickedCardIds[1]].addEventListener('click', cardClick)
+            imgCompare = []
+            clickedCardIds = []
     }
-    // targetImg[0].setAttribute('src','app2images/match.png')
+    
 }
 
 function cardClick(){
     let cardId = this.getAttribute('data-id')
     this.setAttribute('src', imgArr[cardId].src)
+    this.removeEventListener('click', cardClick)
     clickedCardIds.push(cardId)
     imgCompare.push(imgArr[cardId].name)
 
     if(imgCompare.length===2){
-        setTimeout(checkMatch, 300)
+        setTimeout(checkMatch, 500)
         
     }
 }
