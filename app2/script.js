@@ -93,7 +93,12 @@ function checkMatch(){
 function cardClick(){
     let cardId = this.getAttribute('data-id')
     this.setAttribute('src', imgArr[cardId].src)
-    this.removeEventListener('click', cardClick)
+    
+    if(seeIfTouch){
+        this.removeEventListener('touchstart', cardClick)
+    }else{
+        this.removeEventListener('click', cardClick)
+    }
     clickedCardIds.push(cardId)
     imgCompare.push(imgArr[cardId].name)
 
